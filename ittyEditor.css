@@ -1,0 +1,120 @@
+@charset "UTF-8";
+/*=================================================================
+$Id: ittyEditor.css 10 2008-06-22 21:58:23Z fran $
+
+The Itty Editor CSS section is critical to the Editor. 
+Critical because it controls the actions and effect of the buttons 
+and menus as much as does the JavaScript, or more.
+
+Therefore, though it may be tempting to play around with them,
+I highly suggest that you DO NOT TOUCH the following CSS, other 
+than the initial defn for html and body, which is safe to change. 
+
+Otherwise, you may find your fingers turn black in the 
+morning and fall off, and you might have bad luck for 
+7 years. :-o)
+
+Do point the background image urls to directory where the 
+toolbar images are stored.
+
+This file was initially saved as a UTF-8 file with NO BOM.
+Thus the @charset "UTF-8"; at the top. You should probably 
+delete that, if the file is no longer saved as a UTF-8.
+
+However, when resaving as UTF-8, save UTF-8 withOUT BOM, 
+to avoid browser problems. BOM b-bom BOM 
+
+Please note that I comment below and right of a definition.
+
+-- Fran Corpier
+===================================================================
+*/
+
+/*============= 
+Okay to change
+html, body
+===============*/
+html, body {margin:20px; padding:0; font-family: Helvetica, Arial, Verdana, sans-serif; font-size: 90%; background-color: #CEF2D1; width: 95%; height: 95%;}		
+
+/*=============  
+Itty Editor 
+Toolbar Controls 
+===============*/
+.ittyToolbar {background: #ffffff url(images/toolbar-bg.gif) repeat-x; list-style-type: none; height: 34px; width: 450px; min-width:450px; margin: 0; padding: 0 0 0 0px; /*the left padding figure affects the space between the buttons*/ border: 1px solid #666666; z-index:700;}
+
+.ittyToolbar li {display: inline; float: left; /*do NOT set this:width: 20px;*/ height: 20px; margin: 4px 0 0 0px; /*the left padding figure affects the space between the buttons*/ line-height: 20px;}
+	/*setting the width, here, gives the block select menu only 20px. So forget about it.*/
+
+.ittyToolbar a {display: block; width: 20px; height: 20px; overflow: hidden; background-repeat: no-repeat; text-indent: -800em; text-decoration: none; border: 1px solid #FFFFFF; }
+.ittyToolbar a:active {margin-top: 0px; margin-left: 0px; background-position: 0 -40px;}
+	/* the additional top and left margins, if set, effectively moves the button down and to the right 1 by 1 pixels; set each to 0 for a stable rollover with no movement */
+
+.ittyToolbar a:hover {width: 20px; height: 20px; margin: 0 auto; background-position: 0 -20px; padding: 0; background-color: #EEEEEE; border: 1px solid #CCCCCC; cursor: default; text-align: center;}
+
+.ittyToolbar li.ittyToolbarButton, li.ittyToolbarButtonND {width: 20px; height: 20px; background: #FFFFFF/* url(images/toolbar-btnshade.gif) no-repeat bottom right*/; border: 1px solid #FFFFFF; cursor: default; text-align: center;}
+	/* ittyToolbarButton defn. of width and height stabilizes (or destabilizes when absent) the buttons onmouseover */
+
+.ittyToolbar .ittyToolbarSelectMenu li {display: inline; float: right; height: 22px; margin: 4px 0 0 2px;}
+
+.ittyToolbarSelectBlock, .ittyToolbarSelectMode {display: inline; height: 20px; margin: 1px 0 0 2px; font-size:100%;}
+.ittyToolbarBold {background-image: url(images/toolbar-bold.gif);}
+.ittyToolbarxHTML {background-image: url(images/toolbar-viewxhtml.gif);}
+.ittyToolbarHTML {background-image: url(images/toolbar-viewhtml.gif);}
+.ittyToolbarCode2text {background-image: url(images/toolbar-convert2text.gif);}
+.ittyToolbarHR {background-image: url(images/toolbar-horizontalrule.gif);}
+.ittyToolbarImage {background-image: url(images/toolbar-imageinsert.gif);}
+.ittyToolbarItalic {background-image: url(images/toolbar-italics.gif);}
+.ittyToolbarLink {background-image: url(images/toolbar-hyperlink.gif);}
+.ittyToolbarOrdered {background-image: url(images/toolbar-orderedlist.gif);}
+.ittyToolbarUnordered {background-image: url(images/toolbar-unorderedlist.gif);}
+.ittyToolbarSuperscript {background-image: url(images/toolbar-superscript.gif);}
+.ittyToolbarUndo {background-image: url(images/toolbar-undo.gif);}
+.ittyToolbarRedo {background-image: url(images/toolbar-redo.gif);}
+.ittyToolbarHelp {background-image: url(images/toolbar-help.gif);}
+
+/*=============  
+Itty Editor 
+Toolbar Logo 
+===============*/
+.ittyLogo, .ittyLogo a {position:absolute; top:-10px; right:3px; margin:0; padding:0; width:52px; height:60px; background:transparent url(images/BE-U-Mascot52x60.gif) no-repeat center; text-indent:-800em; text-decoration:none; border-style:none; float:right; z-index:800;}
+.ittyLogo a:hover {margin: 0 auto; padding: 0; text-decoration: none; border-style:none; cursor: default; }
+.ittyLogo a:active {margin-top: 2px; margin-left: 2px;}
+
+/*=============
+Help Area
+Highlights
+===============*/
+#markdownhelp {width: 450px; height: 300px; overflow: auto; background-color: #FFE5C4; font-size:11px;}
+#markdownhelp hr {margin-bottom: 0; padding-bottom: 0; line-height: .5em;}
+#markdownhelp ul {list-style-type: none; margin:5px 10px; padding: 0;}
+#markdownhelp ul li span.tip {color:maroon; margin: 0 25px; padding: 0; line-height: 2em;}
+#markdownhelp ul li span.hrtip {color:maroon; margin: 0 25px; padding: 0; position:relative; top: -1em;}
+#markdownhelp p {padding-left: 10px;}
+
+/*=============  
+Change NOT 
+recommended 
+===============*/
+.Disabled .ittyToolbarHTML {background-position: 0 -40px;}
+.Disabled .ittyToolbarHTML:hover {cursor: pointer;}
+.Disabled, .Disabled a, .Disabled a:hover, .ittyToolbar a.Disabled:hover, .ittyToolbar a.Disabled  {margin: 0 !important; padding: 0; border-style: none !important;  background-color: #EEEEEE; background-position: 0 -40px; cursor: default;}
+	/*the background color of #EEEEEE for disabled and normal hovers essentially hides the button shading image on rollover */
+
+/*=============  
+Itty Editor 
+TextArea 
+Controls 
+===============*/
+#ittyEditor {margin: 10px 0 0; padding: 0; position: relative; width: 450px; max-width:450px; height:300px; z-index: 0;}
+	/*match this width to the textarea max-width*/
+	
+div#ittyfooter {margin-top: 3em;/*position:absolute; top:42em; left:3em;*/ z-index:500;}
+	/*Keep this defn here, just below ittyEditor. When placed further down, the footer and, most importantly, the PREVIEW AREA is screwed up in FF.*/
+	
+#ittyMarkdownInput {background-color:#FFFFFF; width: 450px; min-width:450px; height:250px; position: absolute; top: 46px; left: 0;}
+#ittyXhtmlOutput {background-color:#CAF3FF; width: 450px; min-width:450px; height:250px; position: absolute; top: 46px; left: 0;}
+#ittyXhtmlInput {background-color:#FFE5C4; width: 450px; min-width:450px; height:250px; position: absolute; top: 46px; left: 0;}
+.ittyEditorFrontpane {visibility: visible; overflow: auto; z-index: 600;}
+.ittyEditorBackpane {visibility: hidden; overflow: auto; z-index: 0;}
+#ittyEditorPreview {width: 80%;}
+
