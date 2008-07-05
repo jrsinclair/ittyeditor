@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="version" value="$Id: ittyeditor-example.html 13 2008-06-23 06:04:39Z fran $" />
+<title>Itty Editor</title>
+	
+<script type="text/javascript" src="itty.js"></script>
+<script type="text/javascript" src="ittyEditor.js"></script>
+<script type="text/javascript" src="init.js"></script>
+
+<link rel="stylesheet" type="text/css" href="ittyEditor.css" />
+</head>
+
+<body>
+	<div id="pageHeader">
+		<h1>Markdown &#x21d4; XHTML Editor <small>(Two-Way)</small></h1>
+		<h4>markdown-to-xhtml (text mode) and xhtml-to-markdown (xhtml mode)</h4>
+	</div>
+	<!--|============== BEGIN: Itty Editor Section ==============| -->
+	<div id="ittyEditor">
+		<div id="ittyMarkdownInputHeader" class="paneHeader">Input</div>		
+		<textarea id="ittyMarkdownInput" rows="20" class="ittyEditorFrontpane"> 
+		</textarea> 		
+		<textarea id="ittyXhtmlOutput" class="ittyEditorMidpane" cols="80" rows="20" readonly="readonly"> 
+		</textarea>	
+		<textarea id="ittyXhtmlInput" cols="80" rows="20" class="ittyEditorBackpane"> 
+		</textarea>
+	</div>
+	<div id="ittyfooter">
+		<div id="subfooter"></div>
+	</div>
+	<!--|==============END: Itty Editor Section =================| -->
+</body>
+</html>
